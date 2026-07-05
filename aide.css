@@ -1,0 +1,469 @@
+/* =====================================================
+   MEMO CSS - ANTISÈCHE DÉBUTANT
+   ===================================================== */
+
+
+/* =======================
+   1. SÉLECTEURS CSS
+   ======================= */
+
+/* Cible toutes les balises p */
+p {}
+
+/* Cible une classe */
+.ma-classe {}
+
+/* Cible un id */
+#mon-id {}
+
+/* Cible tous les éléments */
+* {}
+
+/* Cible un élément dans un autre */
+header nav a {}
+
+/* Cible plusieurs éléments */
+h1, h2, p {}
+
+/* Cible au survol */
+a:hover {}
+
+/* Cible au clic/focus */
+input:focus {}
+
+/* Cible le texte sélectionné */
+::selection {}
+
+
+
+/* =======================
+   2. DISPLAY
+   ======================= */
+
+.element {
+    display: block;        /* Prend toute la largeur */
+    display: inline;       /* Reste dans la ligne */
+    display: inline-block; /* En ligne mais accepte width/height */
+    display: flex;         /* Active Flexbox */
+    display: grid;         /* Active Grid */
+    display: none;         /* Cache l’élément */
+}
+
+
+
+/* =======================
+   3. FLEXBOX
+   ======================= */
+
+.flex {
+    display: flex;              /* Active Flexbox */
+
+    flex-direction: row;        /* Éléments en ligne */
+    flex-direction: column;     /* Éléments en colonne */
+
+    justify-content: flex-start; /* Début */
+    justify-content: center;     /* Centre */
+    justify-content: flex-end;   /* Fin */
+    justify-content: space-between; /* Espace entre */
+    justify-content: space-around;  /* Espace autour */
+    justify-content: space-evenly;  /* Espace égal */
+
+    align-items: flex-start;    /* Aligné en haut/gauche */
+    align-items: center;        /* Centré */
+    align-items: flex-end;      /* Aligné bas/droite */
+    align-items: stretch;       /* Étire les éléments */
+
+    gap: 20px;                  /* Espace entre les éléments */
+    flex-wrap: wrap;            /* Passe à la ligne si besoin */
+}
+
+
+
+/* =======================
+   4. GRID
+   ======================= */
+
+.grid {
+    display: grid; /* Active Grid */
+
+    grid-template-columns: 1fr 1fr 1fr; /* 3 colonnes égales */
+    grid-template-columns: repeat(3, 1fr); /* Même chose */
+    grid-template-columns: 300px 1fr; /* 1 colonne fixe + 1 flexible */
+
+    gap: 30px; /* Espace entre les blocs */
+}
+
+
+
+/* =======================
+   5. TAILLES
+   ======================= */
+
+.box {
+    width: 100%;          /* Largeur */
+    max-width: 1200px;    /* Largeur maximum */
+    min-width: 300px;     /* Largeur minimum */
+
+    height: 100vh;        /* Hauteur de l'écran */
+    height: 500px;        /* Hauteur fixe */
+    min-height: 100vh;    /* Minimum hauteur écran */
+}
+
+
+
+/* =======================
+   6. ESPACEMENTS
+   ======================= */
+
+.box {
+    margin: 20px;              /* Espace extérieur */
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+
+    margin: 0 auto;            /* Centre horizontalement */
+
+    padding: 20px;             /* Espace intérieur */
+    padding: 100px 20px;       /* Haut/bas puis gauche/droite */
+}
+
+
+
+/* =======================
+   7. TEXTE
+   ======================= */
+
+.texte {
+    color: white;              /* Couleur du texte */
+    font-size: 18px;           /* Taille du texte */
+    font-weight: 700;          /* Épaisseur */
+    font-family: Arial, sans-serif; /* Police */
+
+    text-align: left;          /* Texte à gauche */
+    text-align: center;        /* Texte centré */
+    text-align: right;         /* Texte à droite */
+
+    text-transform: uppercase; /* Met en majuscules */
+    letter-spacing: 2px;       /* Espace entre lettres */
+    line-height: 1.5;          /* Hauteur de ligne */
+}
+
+
+
+/* =======================
+   8. COULEURS ET FONDS
+   ======================= */
+
+.section {
+    background-color: #0a0a0a; /* Couleur de fond */
+    background: #0a0a0a;       /* Version courte */
+
+    background-image: url("image.jpg"); /* Image de fond */
+    background-size: cover;    /* Remplit sans déformer */
+    background-position: center; /* Centre l’image */
+    background-repeat: no-repeat; /* Pas de répétition */
+
+    color: #ffffff;            /* Couleur du texte */
+}
+
+
+
+/* =======================
+   9. BORDURES
+   ======================= */
+
+.card {
+    border: 1px solid #333;    /* Bordure */
+    border-radius: 20px;       /* Coins arrondis */
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3); /* Ombre */
+}
+
+
+
+/* =======================
+   10. POSITION
+   ======================= */
+
+.parent {
+    position: relative; /* Sert de référence aux enfants absolute */
+}
+
+.enfant {
+    position: absolute; /* Placement libre dans le parent */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.fixed {
+    position: fixed; /* Reste collé à l’écran */
+    top: 0;
+}
+
+.sticky {
+    position: sticky; /* Reste collé après scroll */
+    top: 0;
+}
+
+.superposition {
+    z-index: 2; /* Passe devant les éléments avec z-index plus faible */
+}
+
+
+
+/* =======================
+   11. IMAGES ET VIDÉOS
+   ======================= */
+
+.media {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;      /* Remplit sans déformer */
+    object-position: center; /* Centre l’image/vidéo */
+}
+
+
+
+/* =======================
+   12. BOUTONS
+   ======================= */
+
+.btn {
+
+    /* Permet de définir largeur, hauteur, padding, etc. */
+    display: inline-block;
+
+    /* Espace intérieur :
+       15px en haut/bas
+       35px à gauche/droite */
+    padding: 15px 35px;
+
+    /* Couleur de fond */
+    background: #b7e230;
+
+    /* Couleur du texte */
+    color: #0a0a0a;
+
+    /* Supprime la bordure */
+    border: none;
+
+    /* Arrondit les coins */
+    border-radius: 50px;
+
+    /* Supprime le soulignement des liens */
+    text-decoration: none;
+
+    /* Rend le texte plus épais */
+    font-weight: 700;
+
+    /* Curseur "main" au survol */
+    cursor: pointer;
+
+    /* Anime les changements */
+    transition: 0.3s;
+}
+
+.btn:hover {
+
+    /* Remonte légèrement le bouton */
+    transform: translateY(-3px);
+
+    /* Ajoute une ombre lumineuse */
+    box-shadow: 0 0 20px rgba(183,226,48,0.4);
+}
+
+
+
+/* =======================
+   13. FORMULAIRES
+   ======================= */
+
+input,
+textarea,
+select {
+
+    /* Prend toute la largeur disponible */
+    width: 100%;
+
+    /* Espace intérieur */
+    padding: 15px;
+
+    /* Fond du champ */
+    background: #151515;
+
+    /* Couleur du texte */
+    color: white;
+
+    /* Bordure du champ */
+    border: 1px solid #333;
+
+    /* Coins arrondis */
+    border-radius: 10px;
+
+    /* Supprime le contour bleu par défaut */
+    outline: none;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+
+    /* Bordure verte lorsqu'on clique */
+    border-color: #b7e230;
+
+    /* Effet lumineux */
+    box-shadow: 0 0 15px rgba(183,226,48,0.3);
+}
+
+
+
+/* =======================
+   14. ANIMATIONS
+   ======================= */
+
+.element {
+
+    /* Durée de transition */
+    transition: 0.3s;
+}
+
+.element:hover {
+
+    /* Agrandit l'élément de 5% */
+    transform: scale(1.05);
+}
+
+
+/* Création d'une animation personnalisée */
+@keyframes fadeIn {
+
+    from {
+
+        /* Invisible */
+        opacity: 0;
+
+        /* Plus bas de 30px */
+        transform: translateY(30px);
+    }
+
+    to {
+
+        /* Visible */
+        opacity: 1;
+
+        /* Position normale */
+        transform: translateY(0);
+    }
+}
+
+.animation {
+
+    /* Lance l'animation */
+    animation: fadeIn 1s ease forwards;
+}
+
+
+
+/* =======================
+   15. RESPONSIVE
+   ======================= */
+
+/* S'applique uniquement sur mobile
+   ou petits écrans */
+@media (max-width: 768px) {
+
+    .container {
+
+        /* Réduit les marges */
+        padding: 20px;
+    }
+
+    h1 {
+
+        /* Réduit la taille du titre */
+        font-size: 40px;
+    }
+
+    .menu {
+
+        /* Passe les éléments les uns
+           sous les autres */
+        flex-direction: column;
+    }
+}
+
+
+
+/* =======================
+   16. VARIABLES CSS
+   ======================= */
+
+/* Déclaration des variables globales */
+:root {
+
+    /* Couleur principale */
+    --noir: #0a0a0a;
+
+    /* Couleur secondaire */
+    --gris: #151515;
+
+    /* Texte */
+    --blanc: #ffffff;
+
+    /* Couleur d'accent */
+    --vert: #b7e230;
+
+    /* Couleur premium */
+    --or: #c8a24d;
+}
+
+body {
+
+    /* Utilisation d'une variable */
+    background: var(--noir);
+
+    color: var(--blanc);
+}
+
+
+/* =======================
+   17. RESET CSS
+   ======================= */
+
+/* Supprime les marges par défaut
+   du navigateur */
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    /* Les tailles incluent les bordures
+       et les paddings */
+    box-sizing: border-box;
+}
+
+body {
+
+    /* Police principale */
+    font-family: Arial, sans-serif;
+
+    /* Fond du site */
+    background: #0a0a0a;
+
+    /* Couleur du texte */
+    color: white;
+}
+
+img,
+video {
+
+    /* Empêche les débordements */
+    max-width: 100%;
+
+    /* Supprime les espaces parasites */
+    display: block;
+}
